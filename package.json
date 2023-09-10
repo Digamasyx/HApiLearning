@@ -1,0 +1,20 @@
+{
+  "name": "hapiapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e ts  --exec \"npm run compile\"",
+    "compile": "tsc && node ./dist/index.js"
+  },
+  "author": "Digama",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^21.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.2.2"
+  }
+}
