@@ -1,4 +1,5 @@
 import { Server, Request, ResponseToolkit } from "@hapi/hapi";
+import { IsInCharList, PullData } from "./chars/types/char";
 
 const init = async () => {
 
@@ -9,9 +10,22 @@ const init = async () => {
 
     server.route({
         method: 'GET',
-        path: '/',
+        path: '/char/{name}',
         handler: (req, res) => {
-            return 'Hello World!';
+            try {
+
+                if (IsInCharList(req.params.name)) {
+                    return res.response(PullData(req.params.name)).code(200);
+                } else {
+                    return res.response({
+                        message: "Null" 
+                    }).code(404);
+                }
+            } catch (err) {
+                return res.response({
+                    message: err
+                }).code(500);
+            }
         }
     })
 

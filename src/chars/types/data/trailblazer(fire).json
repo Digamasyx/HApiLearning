@@ -1,0 +1,169 @@
+{
+	"name": "trailblazer(fire)",
+	"path": "The Preservation",
+	"stats": {
+		"baseLvl": {
+			"baseHp": [168, 397, 549, 701, 853, 1005, 1157],
+			"baseAtk": [81, 192, 265, 339, 413, 486, 560],
+			"baseDef": [82, 193, 268, 342, 416, 490, 565]
+		},
+		"maxLvl": {
+			"baseHp": [329, 481, 633, 785, 937, 1089, 1241],
+			"baseAtk": [159, 233, 306, 380, 454, 527, 601],
+			"baseDef": [160, 235, 309, 383, 457, 532, 606]
+		},
+		"baseSpd": 100
+	},
+	"skills": {
+		"basicAtk": {
+			"name": "Ice-Breaking Light",
+			"type": "dmg",
+			"scalling": {
+				"scalesWith": "atk",
+				"modifier": "percentage",
+				"scalling": [50, 60, 70, 80, 90, 100, 110, 120, 130]
+			},
+			"tag": "single_target",
+			"buff": {
+				"scalling": [90, 99, 108, 117, 126, 135, 146.25, 157.5, 168.75],
+				"modifier": "percentage",
+				"tag": "blast"
+			}
+		},
+		"skill": {
+			"name": "Ever-Burning Amber",
+			"type": "dmg_resist",
+			"scalling": [
+				40, 41, 42, 43, 44, 45, 46.25, 47.5, 48.75, 50, 51, 52, 53, 54, 55
+			],
+			"tag": "defense",
+			"buff": {
+				"scalling": [0],
+				"tag": "aggro"
+			}
+		},
+		"ultimate": {
+			"name": "War-Flaming Lance",
+			"type": "dmg",
+			"scalling": [
+				{
+					"scalesWith": "atk",
+					"modifier": "percentage",
+					"scalling": [
+						50, 55, 60, 65, 70, 75, 81.25, 87.5, 93.75, 100, 105, 110, 115, 120,
+						125
+					]
+				},
+				{
+					"scalesWith": "def",
+					"modifier": "percentage",
+					"scalling": [
+						75, 82.5, 90, 97.5, 105, 112.5, 121.875, 131.25, 140.625, 150,
+						157.5, 165, 172.5, 180, 187.5
+					]
+				}
+			]
+		},
+		"talent": {
+			"name": "Treasure of the architects",
+			"type": "shield",
+			"scalling": [
+				{
+					"scalesWith": "def",
+					"modifier": "percentage",
+					"scalling": [
+						4, 4.25, 4.5, 4.75, 5, 5.2, 5.4, 5.6, 5.8, 6, 6.2, 6.4, 6.6, 6.8, 7
+					]
+				},
+				{
+					"scalesWith": "def",
+					"modifier": "flat",
+					"scalling": [
+						20, 32, 41, 50, 56, 62, 66.5, 71, 75.5, 80, 84.5, 89, 93.5, 98,
+						102.5
+					]
+				}
+			]
+		}
+	},
+	"eidolon": [
+		{
+			"name": "Earth-Shaking Resonance",
+			"effect": "Additional DMG",
+			"scalling": [
+				{
+					"scalesWith": "def",
+					"scalling": 25,
+					"modifier": "percentage"
+				},
+				{
+					"scalesWith": "def",
+					"scalling": 50,
+					"modifier": "percentage"
+				}
+			]
+		},
+		{
+			"name": "City-Forging Bulwarks",
+			"effect": "On BasicAtk/Ultimate Gain DEF",
+			"scalling": {
+				"scalesWith": "def",
+				"scalling": 10,
+				"modifier": "percentage",
+				"maxStacks": 3
+			}
+		}
+	],
+	"traces": [
+		{
+			"traceBoost": "def",
+			"qtd": 5,
+			"requirement": 0
+		},
+		{
+			"traceBoost": "atk",
+			"qtd": 4,
+			"requirement": 2
+		},
+		{
+			"traceBoost": "def",
+			"qtd": 5,
+			"requirement": 3
+		},
+		{
+			"traceBoost": "atk",
+			"qtd": 6,
+			"requirement": 5
+		},
+		{
+			"traceBoost": "def",
+			"qtd": 7.5,
+			"requirement": 4
+		},
+		{
+			"traceBoost": "hp",
+			"qtd": 4,
+			"requirement": 3
+		},
+		{
+			"traceBoost": "def",
+			"qtd": 5,
+			"requirement": 5
+		},
+		{
+			"traceBoost": "hp",
+			"qtd": 6,
+			"requirement": 4
+		},
+		{
+			"traceBoost": "atk",
+			"qtd": 8,
+			"requirement": 75
+		},
+		{
+			"traceBoost": "def",
+			"qtd": 10,
+			"requirement": 80
+		}
+	]
+}
