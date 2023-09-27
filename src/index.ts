@@ -20,11 +20,11 @@ const init = async () => {
 		handler: (req, res) => {
 			try {
 				// Extract the payload, recieving a { chars: CharList[] } like.
-				let { chars } = req.payload as { chars: CharList[] };
-				let fieldParam =
+				const { chars } = req.payload as { chars: CharList[] };
+				const fieldParam =
 					req.params.field !== undefined ? (req.params.field as string) : null;
 
-				let data = PullData(chars);
+				const data = PullData(chars);
 
 				if (fieldParam !== null) {
 					const newData = data.map(sub => sub[fieldParam as string]);
@@ -81,7 +81,7 @@ const init = async () => {
 						return res
 							.response({ message: 'Argument must be a string' })
 							.code(400);
-					let temp = req.params.field;
+					const temp = req.params.field;
 					return res.response(PullData(req.params.name)[temp]).code(200);
 				} else {
 					return res
