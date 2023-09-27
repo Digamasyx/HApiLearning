@@ -38,7 +38,7 @@ export function PullData<T extends CharList>(
 	name: T | T[] | CharPathLike<CharList> | CharPathLike<CharList>[],
 ): BaseChar<T> | BaseChar<CharList>[] {
 	if (Array.isArray(name)) {
-		let chars: BaseChar<CharList>[] = [];
+		const chars: BaseChar<CharList>[] = [];
 		if (FileIsCharArray(name)) {
 			for (const names of name) {
 				chars.push(require(`./data/${names}`));
@@ -51,10 +51,10 @@ export function PullData<T extends CharList>(
 
 		return chars;
 	} else if (FileIsChar(name)) {
-		let chars = require(`./data/${name}`) as BaseChar<T>;
+		const chars = require(`./data/${name}`) as BaseChar<T>;
 		return chars;
 	} else {
-		let chars = require(`./data/${name}.json`) as BaseChar<T>;
+		const chars = require(`./data/${name}.json`) as BaseChar<T>;
 		return chars;
 	}
 }
@@ -78,7 +78,7 @@ export function FindCharsWithCriterion<T extends CharList>(
 	criteria: Elements | CharTypes<T>,
 	filePath: string,
 ): PathLikeReturn | false {
-	let matchingFiles: PathLikeReturn = { data: [], error: true };
+	const matchingFiles: PathLikeReturn = { data: [], error: true };
 
 	try {
 		const folderPath = path.join(__dirname, filePath);
