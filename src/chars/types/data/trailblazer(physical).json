@@ -1,0 +1,20 @@
+{
+	"name": "trailblazer(physical)",
+	"path": "The Destruction",
+	"element": "Physical",
+
+	"stats": {
+		"baseLvl": {
+			"baseHp": [163, 384, 531, 679, 826, 973, 1121],
+			"baseAtk": [84, 198, 274, 350, 426, 502, 578],
+			"baseDef": [62, 147, 203, 260, 316, 373, 429]
+		},
+		"maxLvl": {
+			"baseHp": [319, 466, 613, 761, 908, 1055, 1203],
+			"baseAtk": [164, 240, 316, 392, 468, 544, 620],
+			"baseDef": [122, 178, 235, 291, 347, 404, 460]
+		},
+
+		"baseSpd": 100
+	}
+}

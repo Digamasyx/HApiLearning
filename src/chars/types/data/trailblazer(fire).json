@@ -1,6 +1,8 @@
 {
 	"name": "trailblazer(fire)",
 	"path": "The Preservation",
+
+	"element": "Fire",
 	"stats": {
 		"baseLvl": {
 			"baseHp": [168, 397, 549, 701, 853, 1005, 1157],
@@ -165,5 +167,62 @@
 			"qtd": 10,
 			"requirement": 80
 		}
-	]
+	],
+
+	"materials": {
+		"1": {
+			"creditCost": 3200,
+			"material": {
+				"name": "Thief's Instinct",
+				"qtd": 4
+			}
+		},
+		"2": {
+			"creditCost": 8400,
+			"material": {
+				"name": "Thief's Instinct",
+				"qtd": 8
+			}
+		},
+		"3": {
+			"creditCost": 12800,
+			"material": [
+				{
+					"name": "Enigmatic Ectostella",
+					"qtd": 4
+				},
+				{
+					"name": "Usurper's Scheme",
+					"qtd": 5
+				}
+			]
+		},
+		"4": {
+			"creditCost": 32000,
+			"material": [
+				{
+					"name": "Enigmatic Ectostella",
+					"qtd": 8
+				},
+				{
+					"name": "Usurper's Scheme",
+					"qtd": 8
+				}
+			]
+		},
+		"5": {
+			"creditCost": 84000,
+			"material": {
+				"name": "Enigmatic Ectostella",
+				"qtd": 8
+			}
+		},
+		"6": {
+			"creditCost": 128000,
+			"mateiral": {
+				"name": "Enigmatic Ectostella",
+				"qtd": 10
+			}
+		}
+	}
 }

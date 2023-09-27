@@ -1,7 +1,6 @@
 /**
  * @format
  */
-
 export type BaseChar<T extends CharList> = {
 	name: T;
 	path: CharTypes<T>;
@@ -25,50 +24,13 @@ interface BaseCharIndexable {
 		| AscMateials;
 }
 
-export function PullData<T extends CharList>(name: T): BaseChar<T> {
-	let chars = require(`./data/${name}.json`) as BaseChar<typeof name>;
-	return chars;
-}
+export type PathLikeReturn = {
+	data: CharPathLike[];
+	error: boolean;
+};
 
-export function IsInCharList(name: any): name is CharList {
-	if (typeof name !== 'string') return false;
-
-	return CharListArray.includes(name as CharList);
-}
-
-export const CharListArray: CharList[] = [
-	'arlan',
-	'asta',
-	'bailu',
-	'blade',
-	'bronya',
-	'clara',
-	'dan_heng',
-	'dan_heng_il',
-	'gepard',
-	'herta',
-	'himeko',
-	'hook',
-	'jing_yuan',
-	'kafka',
-	'luka',
-	'luocha',
-	'march_7th',
-	'natasha',
-	'pela',
-	'qingque',
-	'sampo',
-	'seele',
-	'serval',
-	'silver_wolf',
-	'sushang',
-	'tingyun',
-	'trailblazer(physical)',
-	'trailblazer(fire)',
-	'welt',
-	'yanqing',
-	'yukong',
-];
+export type CharPathLike<T extends string = CharList> = AddJSON<T>;
+export type AddJSON<T extends string> = `${T}.json`;
 export type CharList =
 	| 'arlan'
 	| 'asta'
@@ -134,7 +96,7 @@ type Preservation = 'gepard' | 'march_7th' | 'trailblazer(fire)';
 
 /* Char base types */
 
-type Elements =
+export type Elements =
 	| 'Fire'
 	| 'Ice'
 	| 'Physical'
@@ -177,20 +139,56 @@ type Eidolons = {
 	scalling?: number | number[] | Scalling | Scalling[];
 };
 
+type a = Range<1, 20>;
 type AscMateials = {
 	[key in Range<1, 7>]: {
 		creditCost: number;
 		material:
 			| {
-					name: string;
+					name: CharAscMaterials | StagnantShadowDrop;
 					qtd: number;
 			  }
 			| {
-					name: string;
+					name: CharAscMaterials | StagnantShadowDrop;
 					qtd: number;
 			  }[];
 	};
 };
+
+type CharAscMaterials =
+	| 'Extinguished Core'
+	| 'Glimmering Core'
+	| 'Squirming Core'
+	| "Thief's Instinct"
+	| "Usurper's Scheme"
+	| "Conqueror's Will"
+	| 'Silvermane Badge'
+	| 'Silvermane Insignia'
+	| 'Silvermane Medal'
+	| 'Ancienct Part'
+	| 'Ancient Spindle'
+	| 'Ancient Engine'
+	| 'Immortal Scionette'
+	| 'Immortal Aeroblossom'
+	| 'Immortal Lumintwig'
+	| "Artifex's Module"
+	| "Artifex's Cogwheel"
+	| "Artifex's Gyreheart";
+
+type StagnantShadowDrop = `Shape of ${StagnantShadowDropKeys}`;
+type StagnantShadowDropKeys =
+	| 'Quanta'
+	| 'Gust'
+	| 'Blaze'
+	| 'Spike'
+	| 'Doom'
+	| 'Rime'
+	| 'Fulmination'
+	| 'Icicle'
+	| 'Mirage'
+	| 'Celestial'
+	| 'Puppetry'
+	| 'Abomination';
 
 /* Keys */
 
