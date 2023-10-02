@@ -11,7 +11,7 @@ import { CharTypes } from './chars/types/char';
 const init = async () => {
 	const server: Server = new Server({
 		port: 3000,
-		host: 'localhost',
+		host: '192.168.1.103',
 	});
 
 	server.route({
@@ -27,7 +27,7 @@ const init = async () => {
 				const data = PullData(chars);
 
 				if (fieldParam !== null) {
-					const newData = data.map(sub => sub[fieldParam as string]);
+					const newData = data.map(sub => sub[fieldParam]);
 					return res.response(newData).code(200);
 				} else {
 					return res.response(data).code(200);

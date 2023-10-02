@@ -40,6 +40,7 @@ export type CharList =
 	| 'clara'
 	| 'dan_heng'
 	| 'dan_heng_il'
+	| 'fu_xuan'
 	| 'gepard'
 	| 'herta'
 	| 'himeko'
@@ -48,6 +49,7 @@ export type CharList =
 	| 'kafka'
 	| 'luka'
 	| 'luocha'
+	| 'lynx'
 	| 'march_7th'
 	| 'natasha'
 	| 'pela'
@@ -64,7 +66,7 @@ export type CharList =
 	| 'yanqing'
 	| 'yukong';
 
-export type CharTypes<T> = T extends Abundance
+export type CharTypes<T extends CharList> = T extends Abundance
 	? 'The Abundance'
 	: T extends Destruction
 	? 'The Destruction'
@@ -80,7 +82,7 @@ export type CharTypes<T> = T extends Abundance
 	? 'The Preservation'
 	: never;
 
-type Abundance = 'bailu' | 'natasha' | 'luocha';
+type Abundance = 'bailu' | 'natasha' | 'luocha' | 'lynx';
 type Destruction =
 	| 'arlan'
 	| 'hook'
@@ -92,7 +94,7 @@ type Erudition = 'herta' | 'himeko' | 'serval' | 'qingque' | 'jing_yuan';
 type Harmony = 'asta' | 'bronya' | 'tingyun' | 'yukong';
 type Hunt = 'dan_heng' | 'seele' | 'sushang' | 'yanqing';
 type Nihility = 'pela' | 'sampo' | 'welt' | 'silver_wolf' | 'kafka' | 'luka';
-type Preservation = 'gepard' | 'march_7th' | 'trailblazer(fire)';
+type Preservation = 'gepard' | 'march_7th' | 'trailblazer(fire)' | 'fu_xuan';
 
 /* Char base types */
 
@@ -139,7 +141,6 @@ type Eidolons = {
 	scalling?: number | number[] | Scalling | Scalling[];
 };
 
-type a = Range<1, 20>;
 type AscMateials = {
 	[key in Range<1, 7>]: {
 		creditCost: number;
